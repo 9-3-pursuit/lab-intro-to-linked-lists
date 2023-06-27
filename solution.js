@@ -7,17 +7,32 @@ class Node {
 }
 
 class LinkedList {
-  constructor(head) {
+  constructor(head = null) {
     this.head = head;
   }
-  insert() {}
+
+  insert(data) {
+    this.data = data;
+    if (!this.head) {
+      this.head = new Node(this.data);
+    }
+    let currentNode = this.head;
+    while (currentNode.next) {
+      currentNode = currentNode.next;
+    }
+    currentNode.next = new Node(this.data);
+  }
   size() {}
   delete() {}
   getFirst() {}
   getLast() {}
   search() {}
-  getKth(){}
-  
+  getKth() {}
+  getKthToLast() {}
+  isEmpty() {}
+  clear() {}
+  toArray() {}
+  containsDuplicates() {}
 }
 
 module.exports = {
