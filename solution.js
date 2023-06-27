@@ -24,6 +24,15 @@ class LinkedList {
     }
     currentNode.next = new Node(this.data);
   }
+  size () {
+    let length = 0;
+    let currentNode = this.head;
+    while(currentNode){
+      length++
+      currentNode = currentNode.next;
+    }
+    return length;
+  }
 }
 
 module.exports = {
