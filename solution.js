@@ -1,10 +1,25 @@
 const { nums, words } = require("./data/data.js");
 
 class Node {
-  constructor(){
-    
+  constructor(data, next) {
+    (this.data = data), (this.next = next);
   }
 }
+
+class LinkedList {
+  constructor(head) {
+    this.head = head;
+  }
+  insert() {}
+  size() {}
+  delete() {}
+  getFirst() {}
+  getLast() {}
+  search() {}
+  getKth(){}
+  
+}
+
 module.exports = {
   Node,
   LinkedList,
