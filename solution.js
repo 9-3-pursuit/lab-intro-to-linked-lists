@@ -29,6 +29,16 @@ class LinkedList {
       this.head = newNode;
     }
   }
+  // size() - count the length of the linked list
+  size(){
+    let sizeCount = 0;
+    let pointer = this.head;
+    while(pointer){
+      sizeCount ++
+      pointer = pointer.next
+    }
+    return sizeCount;
+  }
 }
 module.exports = {
   Node,
