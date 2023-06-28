@@ -99,10 +99,17 @@ class LinkedList {
 
 */
 
-  isEmpty() {}
+  isEmpty() {
+    if (this.head === null && this.tail === null) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   clear() {
     this.head = null;
+    this.tail = null;
     return this.head;
   }
 
