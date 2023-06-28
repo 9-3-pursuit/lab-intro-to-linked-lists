@@ -69,6 +69,17 @@ class LinkedList {
       currentNode = currentNode.next;
     }
   }
+  getKth (kth) {
+    let currentNode = this.head;
+    let index = -1; 
+    while(currentNode){
+      index++
+      if (kth === index) {
+        return currentNode;
+      }
+      currentNode = currentNode.next;
+    }
+  }
 }
 
 let numList = new LinkedList();
