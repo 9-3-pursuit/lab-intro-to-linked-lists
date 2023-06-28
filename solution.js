@@ -26,7 +26,7 @@ class LinkedList {
   size () {
     let length = 0;
     let currentNode = this.head;
-    while(currentNode){
+    while(currentNode.next){
       length++
       currentNode = currentNode.next;
     }
@@ -52,6 +52,17 @@ class LinkedList {
     }
   }
 }
+
+let numList = new LinkedList();
+for (let num of nums) {
+  numList.insert(num);
+}
+wordList = new LinkedList();
+for (let word of words) {
+  wordList.insert(word);
+}
+
+console.log(numList.size());
 
 module.exports = {
   Node,
