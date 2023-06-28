@@ -105,6 +105,15 @@ class LinkedList {
     }
     return node;
   }
+  // isEmpty() - check if the list is empty
+  isEmpty() {
+    return !this.head;
+  }
+
+  // clear() - clear the linked list
+  clear() {
+    this.head = null;
+  }
 }
 module.exports = {
   Node,
