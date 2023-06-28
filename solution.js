@@ -37,7 +37,19 @@ class LinkedList {
     return count;
   }
 
-  delete() {}
+  delete(key) {
+    let currentNode = this.head;
+    let previous = this.head;
+    while (currentNode.next !== undefined) {
+      if (currentNode.data === key) {
+        previous.next = currentNode.next;
+        currentNode = currentNode.next;
+      } else {
+        previous = currentNode;
+        currentNode = currentNode.next;
+      }
+    }
+  }
 
   getFirst() {
     return this.head;
@@ -137,22 +149,8 @@ class LinkedList {
     }
     return false;
   }
-}
-// check duplicates in an array [1,2,2,3,3,5,4] keyaanu key
+} // End of linked list
 
-/*
-const newarr = []
-let result = false
-for(let i = 0; i < arr.length; i++){
-  if(newarr.includes(arr[i])){
-    result = true
-  } else {
-    result = false
-  }
-}
-return result
-
-*/
 wordList = new LinkedList();
 for (let word of words) {
   wordList.insert(word);
