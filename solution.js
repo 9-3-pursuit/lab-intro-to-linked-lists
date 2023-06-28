@@ -91,6 +91,22 @@ class LinkedList {
       currentNode = currentNode.next;
     }
   }
+  isEmpty () {
+    if (!this.size()) {
+     return true;
+    } else {
+     return false;
+    }
+  }
+   clear () {
+ 
+  }
+   toArray () {
+ 
+  }
+   containsDuplicates () {
+ 
+  }
 }
 
 let numList = new LinkedList();
@@ -102,7 +118,9 @@ for (let word of words) {
   wordList.insert(word);
 }
 
-console.log(numList.size());
+let list = new LinkedList();
+
+console.log(list.isEmpty());
 
 module.exports = {
   Node,
