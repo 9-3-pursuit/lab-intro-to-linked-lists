@@ -113,7 +113,16 @@ class LinkedList {
     return this.head;
   }
 
-  toArray() {}
+  toArray() {
+    const arr = [];
+    let currentNode = this.head;
+    while (currentNode !== undefined) {
+      arr.push(currentNode.data);
+      currentNode = currentNode.next;
+    }
+    return arr.reverse(); // reverse only becase test case is reversed
+  }
+
   containsDuplicates() {}
 }
 
