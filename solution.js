@@ -35,7 +35,9 @@ class LinkedList {
   }
 
   delete() {}
-  getFirst() {}
+  getFirst() {
+    return this.head;
+  }
   getLast() {}
   search() {}
   getKth() {}
