@@ -125,6 +125,20 @@ class LinkedList {
     }
     return listToArr;
   }
+  // containsDuplicates() - check for copies in linked list 
+  containsDuplicates() {
+    let node = this.head;
+    let copy = {};
+    while (node) {
+      if (copy[node.data]) {
+        return true;
+      } else {
+        copy[node.data] = 1;
+      }
+      node = node.next;
+    }
+    return false;
+  }
 }
 module.exports = {
   Node,
