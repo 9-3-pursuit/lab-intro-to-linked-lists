@@ -120,12 +120,39 @@ class LinkedList {
       arr.push(currentNode.data);
       currentNode = currentNode.next;
     }
-    return arr.reverse(); // reverse only becase test case is reversed
+    return arr.reverse(); // reverse only because test case is reversed
   }
 
-  containsDuplicates() {}
+  containsDuplicates() {
+    let currentNode = this.head;
+    while (currentNode !== undefined) {
+      let nextNode = currentNode.next;
+      while (nextNode !== undefined) {
+        if (currentNode.data === nextNode.data) {
+          return true;
+        }
+        nextNode = nextNode.next;
+      }
+      currentNode = currentNode.next;
+    }
+    return false;
+  }
 }
+// check duplicates in an array [1,2,2,3,3,5,4] keyaanu key
 
+/*
+const newarr = []
+let result = false
+for(let i = 0; i < arr.length; i++){
+  if(newarr.includes(arr[i])){
+    result = true
+  } else {
+    result = false
+  }
+}
+return result
+
+*/
 wordList = new LinkedList();
 for (let word of words) {
   wordList.insert(word);
