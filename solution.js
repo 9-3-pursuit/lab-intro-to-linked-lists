@@ -5,6 +5,7 @@ class Node {
     (this.data = data), (this.next = next);
   }
 }
+// how to get last element of the array = array.length - 1
 
 class LinkedList {
   constructor(head = null, tail = null) {
@@ -73,7 +74,20 @@ class LinkedList {
       }
     }
   }
-  getKthToLast() {}
+
+  getKthToLast(num) {
+    let currentNode = this.head;
+    let count = 0;
+
+    while (currentNode !== undefined) {
+      if (count === this.size() - num) {
+        return currentNode;
+      }
+      count++;
+      currentNode = currentNode.next;
+    }
+  }
+
   isEmpty() {}
   clear() {}
   toArray() {}
