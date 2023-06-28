@@ -7,12 +7,13 @@ class Node {
 }
 
 class LinkedList {
-  constructor(head = null) {
+  constructor(head = null, tail = null) {
     this.head = head;
+    this.tail = tail;
   }
 
   insert(data) {
-    this.data = data; //data = 1
+    this.data = data;
     if (!this.head) {
       this.head = new Node(this.data);
       return this.head;
@@ -22,6 +23,7 @@ class LinkedList {
       currentNode = currentNode.next;
     }
     currentNode.next = new Node(this.data);
+    this.tail = currentNode.next;
   }
 
   size() {
@@ -38,7 +40,15 @@ class LinkedList {
   getFirst() {
     return this.head;
   }
-  getLast() {}
+  getLast() {
+    let currentNode = this.head;
+    while (currentNode.next != null) {
+      // != null or !== undefined, but cannot have strictly !== null tests fail
+      currentNode = currentNode.next;
+    }
+    return currentNode;
+    // return this.tail // both above code and this works, long way short way
+  }
   search() {}
   getKth() {}
   getKthToLast() {}
