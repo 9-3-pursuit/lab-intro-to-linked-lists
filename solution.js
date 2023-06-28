@@ -12,9 +12,10 @@ class LinkedList {
   }
 
   insert(data) {
-    this.data = data;
+    this.data = data; //data = 1
     if (!this.head) {
       this.head = new Node(this.data);
+      return this.head;
     }
     let currentNode = this.head;
     while (currentNode.next) {
@@ -22,7 +23,17 @@ class LinkedList {
     }
     currentNode.next = new Node(this.data);
   }
-  size() {}
+
+  size() {
+    let count = 0;
+    let currentNode = this.head;
+    while (currentNode !== undefined) {
+      count++;
+      currentNode = currentNode.next;
+    }
+    return count;
+  }
+
   delete() {}
   getFirst() {}
   getLast() {}
@@ -34,6 +45,17 @@ class LinkedList {
   toArray() {}
   containsDuplicates() {}
 }
+
+wordList = new LinkedList();
+for (let word of words) {
+  wordList.insert(word);
+}
+numList = new LinkedList();
+for (let num of nums) {
+  numList.insert(num);
+}
+
+console.log(numList.size());
 
 module.exports = {
   Node,
