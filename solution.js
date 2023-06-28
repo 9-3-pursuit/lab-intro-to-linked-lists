@@ -15,6 +15,7 @@ class LinkedList {
     this.data = data
     if (!this.head) {
       this.head = new Node(this.data);
+      return this.head
     }
     let currentNode = this.head;
 
@@ -26,7 +27,7 @@ class LinkedList {
   size () {
     let length = 0;
     let currentNode = this.head;
-    while(currentNode.next){
+    while(currentNode){
       length++
       currentNode = currentNode.next;
     }
@@ -50,6 +51,9 @@ class LinkedList {
         currentNode = currentNode.next;
       }
     }
+  }
+  getFirst () {
+    return this.head
   }
 }
 
