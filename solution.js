@@ -39,7 +39,7 @@ class LinkedList {
     }
     return sizeCount;
   }
-  
+
   // delete() - by key from the linked list
   delete(key) {
     let node = this.head;
@@ -57,8 +57,17 @@ class LinkedList {
   }
 
   // getFirstElement() of the linked list
-  getFirst(){
+  getFirst() {
     return this.head;
+  }
+  // getLastElement() of thr linked list
+  getLast() {
+    let node = this.head;
+    if (!this.head) return null;
+    while (node.next) {
+      node = node.next;
+    }
+    return node;
   }
 }
 module.exports = {
