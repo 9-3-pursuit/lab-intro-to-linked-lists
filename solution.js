@@ -61,8 +61,18 @@ class LinkedList {
       currentNode = currentNode.next;
     }
   }
-  
-  getKth() {}
+
+  getKth(num) {
+    let currentNode = this.head;
+    let count = 0;
+    while (currentNode.next !== undefined) {
+      count++;
+      currentNode = currentNode.next;
+      if (count === num) {
+        return currentNode;
+      }
+    }
+  }
   getKthToLast() {}
   isEmpty() {}
   clear() {}
