@@ -99,7 +99,11 @@ class LinkedList {
     }
   }
    clear () {
- 
+    let currentNode = this.head;
+    while(currentNode){
+      this.head = this.head.next;
+      currentNode = currentNode.next;
+    }
   }
    toArray () {
  
