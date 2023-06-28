@@ -15,7 +15,6 @@ class LinkedList {
     this.data = data
     if (!this.head) {
       this.head = new Node(this.data);
-      return this.head;
     }
     let currentNode = this.head;
 
@@ -32,6 +31,25 @@ class LinkedList {
       currentNode = currentNode.next;
     }
     return length;
+  }
+  delete (key) {
+    let temp = this.head;
+    let currentNode = this.head;
+    while(currentNode.next){
+      if (currentNode.data === key) {
+        if (currentNode === this.head) {
+           this.head = this.head.next;
+           currentNode = currentNode.next
+        } else {
+          temp.next = currentNode.next;
+          currentNode = currentNode.next;
+        }
+        return this.head
+      } else {
+        temp = currentNode
+        currentNode = currentNode.next;
+      }
+    }
   }
 }
 
