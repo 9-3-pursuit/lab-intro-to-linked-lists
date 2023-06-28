@@ -55,6 +55,11 @@ class LinkedList {
     }
     node.next = foundNode.next;
   }
+
+  // getFirstElement() of the linked list
+  getFirst(){
+    return this.head;
+  }
 }
 module.exports = {
   Node,
