@@ -78,7 +78,6 @@ class LinkedList {
   getKthToLast(num) {
     let currentNode = this.head;
     let count = 0;
-
     while (currentNode !== undefined) {
       if (count === this.size() - num) {
         return currentNode;
@@ -87,9 +86,26 @@ class LinkedList {
       currentNode = currentNode.next;
     }
   }
+  /* explanation for above get kth to last problem
+
+  imagine the nodes are 1, 2, 3, 4, 5 so size = 5 or count + 1
+  kth to last will never be 0th
+  1st to last means last = 5
+  2nd to last means last minus one = 4
+  so kth is always last + 1
+  size - kth = answer
+  check if count = size - kth
+  return current node with that count
+
+*/
 
   isEmpty() {}
-  clear() {}
+
+  clear() {
+    this.head = null;
+    return this.head;
+  }
+
   toArray() {}
   containsDuplicates() {}
 }
@@ -103,7 +119,9 @@ for (let num of nums) {
   numList.insert(num);
 }
 
-console.log(numList.size());
+numList.clear();
+
+console.log(numList);
 
 module.exports = {
   Node,
