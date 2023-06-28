@@ -70,13 +70,40 @@ class LinkedList {
     return node;
   }
   // search() - find a element by key & return data
-  search(findKey){
+  search(findKey) {
     let node = this.head;
-    while( node !== null && node.data !== findKey){
+    while (node !== null && node.data !== findKey) {
       node = node.next;
     }
     return node;
+  }
 
+  // getKth() - retrieve kth element
+  getKth(kthElement) {
+    let node = this.head;
+    let count = 1;
+    while (count !== kthElement && node.next) {
+      count++;
+      node.next;
+    }
+    return node;
+  }
+
+  // getKthToLast() -  retrieve kth from last element
+  getKthToLast(kthLastElement) {
+    let node = this.head;
+    let amtOfNodes = 0;
+    while (node) {
+      amtOfNodes++;
+      node = node.next;
+    }
+    let countKth = 1;
+    node = this.head;
+    while (countKth < amtOfNodes - kthLastElement) {
+      countKth++;
+      node = node.next;
+    }
+    return node;
   }
 }
 module.exports = {
