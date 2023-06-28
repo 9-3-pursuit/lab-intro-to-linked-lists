@@ -37,9 +37,11 @@ class LinkedList {
   }
 
   delete() {}
+
   getFirst() {
     return this.head;
   }
+
   getLast() {
     let currentNode = this.head;
     while (currentNode.next != null) {
@@ -49,7 +51,17 @@ class LinkedList {
     return currentNode;
     // return this.tail // both above code and this works, long way short way
   }
-  search() {}
+
+  search(key) {
+    let currentNode = this.head;
+    while (currentNode.next !== undefined) {
+      if (currentNode.data === key) {
+        return currentNode;
+      }
+      currentNode = currentNode.next;
+    }
+  }
+  
   getKth() {}
   getKthToLast() {}
   isEmpty() {}
