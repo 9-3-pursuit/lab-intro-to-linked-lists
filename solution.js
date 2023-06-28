@@ -30,14 +30,30 @@ class LinkedList {
     }
   }
   // size() - count the length of the linked list
-  size(){
+  size() {
     let sizeCount = 0;
-    let pointer = this.head;
-    while(pointer){
-      sizeCount ++
-      pointer = pointer.next
+    let node = this.head;
+    while (node) {
+      sizeCount++;
+      node = node.next;
     }
     return sizeCount;
+  }
+  
+  // delete() - by key from the linked list
+  delete(key) {
+    let node = this.head;
+    let counter = 0;
+    while (node.data !== key && node.next) {
+      counter++;
+      node = node.next;
+    }
+    let foundNode = node;
+    node = this.head;
+    for (let i = 1; i < counter; i++) {
+      node = node.next;
+    }
+    node.next = foundNode.next;
   }
 }
 module.exports = {
