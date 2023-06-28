@@ -8,8 +8,9 @@ class Node {
 }
 
 class LinkedList {
-  constructor (head = null) {
-    this.head = head
+  constructor (head = null, tail = null) {
+    this.head = head;
+    this.tail = tail;
   }
   insert (data) {
     this.data = data
@@ -23,6 +24,7 @@ class LinkedList {
       currentNode = currentNode.next;
     }
     currentNode.next = new Node(this.data);
+    this.tail = currentNode.next
   }
   size () {
     let length = 0;
@@ -54,6 +56,18 @@ class LinkedList {
   }
   getFirst () {
     return this.head
+  }
+  getLast () {
+    return this.tail
+  }
+  search (key) {
+    let currentNode = this.head;
+    while(currentNode.next){
+      if (currentNode.data === key) {
+        return currentNode
+      }
+      currentNode = currentNode.next;
+    }
   }
 }
 
