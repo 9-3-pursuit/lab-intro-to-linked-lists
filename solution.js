@@ -106,7 +106,13 @@ class LinkedList {
     }
   }
    toArray () {
- 
+    let array = [];
+    let currentNode = this.head;
+    while(currentNode){
+      array.push(currentNode.data);
+      currentNode = currentNode.next;
+    }
+    return array.reverse()
   }
    containsDuplicates () {
  
@@ -124,7 +130,7 @@ for (let word of words) {
 
 let list = new LinkedList();
 
-console.log(list.isEmpty());
+console.log(numList.toArray());
 
 module.exports = {
   Node,
