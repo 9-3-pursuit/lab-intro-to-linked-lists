@@ -114,6 +114,17 @@ class LinkedList {
   clear() {
     this.head = null;
   }
+
+  // toArray() - convert the given data from a linked list into an array
+  toArray() {
+    let node = this.head;
+    let listToArr = [];
+    while (node) {
+      listToArr.push(node.data);
+      node = node.next;
+    }
+    return listToArr;
+  }
 }
 module.exports = {
   Node,
