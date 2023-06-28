@@ -69,6 +69,15 @@ class LinkedList {
     }
     return node;
   }
+  // search() - find a element by key & return data
+  search(findKey){
+    let node = this.head;
+    while( node !== null && node.data !== findKey){
+      node = node.next;
+    }
+    return node;
+
+  }
 }
 module.exports = {
   Node,
