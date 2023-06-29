@@ -84,6 +84,38 @@ class LinkedList {
       index++;
     }
   }
+
+  isEmpty() {
+    return (this.head === null && this.tail === null);
+  }
+
+  clear() {
+    this.head = null;
+    this.tail = null
+  }
+
+  toArray() {
+    let node = this.head;
+    const arr = [];
+    while (node !== null) {
+      arr.unshift(node.data);
+      node = node.next;
+    }
+    return arr;
+  }
+
+  containsDuplicates() {
+    let node = this.head;
+    const set = new Set();
+    const arr = [];
+    while (node !== null) {
+      set.add(node.data);
+      arr.push(node.data);
+      node = node.next;
+    }
+    const setArr = [...set]
+    return setArr.toString() !== arr.toString();
+  }
 }
 
 module.exports = {
