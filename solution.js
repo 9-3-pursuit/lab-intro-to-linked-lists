@@ -5,7 +5,6 @@ class Node {
     (this.data = data), (this.next = next);
   }
 }
-// how to get last element of the array = array.length - 1
 
 class LinkedList {
   constructor(head = null, tail = null) {
