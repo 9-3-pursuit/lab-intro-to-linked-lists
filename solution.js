@@ -57,14 +57,12 @@ class LinkedList {
     return null;
   }
 
-
   getLast() {
     if (this.head) {
       return this.head;
     }
     return null;
   }
-
 
   search(key) {
     let currentNode = this.head;
@@ -122,7 +120,7 @@ class LinkedList {
       arr.push(currentNode.data);
       currentNode = currentNode.next;
     }
-    return arr.reverse(); // reverse only because test case is reversed
+    return arr.reverse();
   }
 
   containsDuplicates() {
@@ -139,7 +137,7 @@ class LinkedList {
     }
     return false;
   }
-} // End of linked list
+}
 
 wordList = new LinkedList();
 for (let word of words) {
