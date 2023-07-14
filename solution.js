@@ -59,6 +59,40 @@ class LinkedList {
     }
     return curr;
   }
+  isEmpty() {
+    return !this.head;
+  }
+  clear() {
+    this.head = null;
+  }
+  getKth(k) {
+    let size = this.size();
+    let curr = this.tail;
+    for (let i = 0; i < size - k; i++) {
+      curr = curr.next;
+    }
+    return curr;
+  }
+  getKthToLast(k) {
+    let curr = this.tail;
+    for (let i = 0; i < k; i++) {
+      curr = curr.next;
+    }
+    return curr;
+  }
+  toArray() {
+    let accum = [];
+    let curr = this.tail;
+    while (curr) {
+      accum.unshift(curr.data);
+      curr = curr.next;
+    }
+    return accum;
+  }
+  containsDuplicates() {
+    const set = new Set(this.toArray());
+    return this.toArray().length !== set.size;
+  }
 }
 
 module.exports = {
