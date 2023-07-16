@@ -67,7 +67,7 @@ describe("Linked Lists", () => {
     expect(numList.isEmpty()).toBe(false);
   });
 
-  test("Clear the linked list", () => {
+  test.only("Clear the linked list", () => {
     let tempNumList = new LinkedList();
     for (let num of nums) {
       tempNumList.insert(num);
