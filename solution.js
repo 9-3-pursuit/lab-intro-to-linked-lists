@@ -163,6 +163,18 @@ class LinkedList {
     }
     return result;
   }
+  containsDuplicates() {
+    let current = this.head
+    let result = []
+    while (current) {
+      if (result.includes(current.data)) {
+        return true
+      }
+      result.push(current.data)
+      current = current.next
+    }
+    return false
+  }
 }
 // getkthToLast()
 const firstNode = new Node();

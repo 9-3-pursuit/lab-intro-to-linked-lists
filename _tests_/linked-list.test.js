@@ -53,7 +53,7 @@ describe("Linked Lists", () => {
     expect(numList.search(5).data).toEqual(5);
   });
 
-  test.only("Retrieve kth element", () => {
+  test("Retrieve kth element", () => {
     expect(numList.getKth(1).data).toEqual(0);
   });
 
@@ -67,7 +67,7 @@ describe("Linked Lists", () => {
     expect(numList.isEmpty()).toBe(false);
   });
 
-  test.only("Clear the linked list", () => {
+  test("Clear the linked list", () => {
     let tempNumList = new LinkedList();
     for (let num of nums) {
       tempNumList.insert(num);
