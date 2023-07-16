@@ -2,7 +2,8 @@ const { nums, words } = require("./data/data.js");
 
 class Node {
   constructor(data) {
-    (this.data = data), (this.next = null);
+    this.data = data, 
+    this.next = null
   }
 }
 class LinkedList {
@@ -77,16 +78,20 @@ class LinkedList {
     return current;
   }
   getKth(k) {
+    this.k = k;
     let current = this.head;
+    
+    for (let i = 0; i < this.data; i++) {
+      if (current !== null && current === k) {
+        return current;
+      }else {
+        current = current.next;
 
-    for (let i = 0; i < k; i++) {
-      if (current === null) {
-        return null;
       }
-      current = current.next;
+      
     }
-    return current;
-
+    
+  
 
 
         // let current = this.head;
@@ -99,8 +104,11 @@ class LinkedList {
     //   return null;
     // }
     // return current;
-  }
-  getKthToLast(k) {
+  
+  // let linkedList = new LinkedList();
+  // let kth = linkedList.getKth(k);
+
+ } getKthToLast(k) {
     //find the kth to the last node in a singly linked list
     let current = this.head;
     let end = this.head;
@@ -146,8 +154,17 @@ class LinkedList {
     this.head = null
 
   }
+  toArray() {
+    let result = []
+    let current = this.head
+    while (current) {
+      result.push(current.data)
+      current = current.next
+    }
+    return result;
+  }
 }
-
+// getkthToLast()
 const firstNode = new Node();
 // const secondNode = new Node(2);
 // firstNode.next = secondNode;

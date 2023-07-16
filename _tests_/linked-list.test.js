@@ -53,11 +53,11 @@ describe("Linked Lists", () => {
     expect(numList.search(5).data).toEqual(5);
   });
 
-  test("Retrieve kth element", () => {
+  test.only("Retrieve kth element", () => {
     expect(numList.getKth(1).data).toEqual(0);
   });
 
-  test.only("Retrieve kth from last element", () => {
+  test("Retrieve kth from last element", () => {
     expect(numList.getKthToLast(1).data).toEqual(2);
   });
 
